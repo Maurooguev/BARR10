@@ -47,7 +47,7 @@ header .search-bar {
     display: flex;
     flex: 1;
     justify-content: center;
-    margin: 0 20px;
+    margin: 0 150px;
 }
 
 header .search-bar input {
@@ -56,7 +56,7 @@ header .search-bar input {
     border: 2px solid var(--color-primary);
     outline: none;
     font-size: 16px;
-    width: 300px;
+    width: 500px;
     transition: width 0.4s ease, border-color 0.3s ease;
 }
 
@@ -593,4 +593,148 @@ tr:nth-child(even) {
 
 .next-button:hover {
     background-color: var(--color-primary-dark); /* Cambia al verde oscuro al hacer hover */
+}
+
+/* Estilos para la página de configuración del torneo 2 */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--color-card-background);
+    border-radius: 8px;
+}
+
+h2 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+button, input, select {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    font-size: 1rem;
+}
+
+button.next-button {
+    float: right;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: var(--color-text);
+}
+
+.player-inputs, .tournament-awards, .tournament-rules {
+    margin-top: 15px;
+}
+
+#matchList, #playerList, #awardsList {
+    margin-top: 15px;
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    /* Ajuste del header */
+    header {
+        display: flex; /* Usamos flexbox para alinear elementos */
+        justify-content: space-between; /* Espacio entre logo y menú */
+        align-items: center; /* Alineamos verticalmente */
+        padding: 10px; /* Añadimos un poco de padding */
+        margin-top: 20px; /* Margen superior para moverlo hacia abajo */
+        flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    }
+
+    header .logo {
+        font-size: 22px;
+        margin: 0; /* Sin margen inferior */
+    }
+
+    header nav ul {
+        display: flex; /* Usamos flexbox para el menú */
+        justify-content: space-between; /* Espacio entre los elementos */
+        padding: 0; /* Sin padding en la lista */
+        list-style: none; /* Quitamos los puntos de la lista */
+        margin: 0; /* Sin margen en la lista */
+    }
+
+    header nav ul li {
+        margin: 0 10px; /* Espacio entre los elementos del menú */
+    }
+
+    .search-bar {
+        display: flex; /* Usamos flexbox para la barra de búsqueda */
+        align-items: center; /* Alineamos verticalmente */
+        width: 100%; /* Ocupa el ancho completo */
+        margin-top: 10px; /* Espacio superior */
+    }
+
+    .search-bar input {
+        flex: 1; /* Toma el espacio restante */
+        padding: 5px; /* Espacio interno */
+        border: 1px solid #ccc; /* Borde más delgado */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .search-bar button {
+        padding: 5px 10px; /* Espacio interno del botón */
+        margin-left: 5px; /* Espacio a la izquierda del botón */
+        background-color: #4CAF50; /* Color de fondo atractivo */
+        color: white; /* Color del texto */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer; /* Cambia el cursor al pasar */
+        transition: background-color 0.3s; /* Efecto de transición */
+    }
+
+    .search-bar button:hover {
+        background-color: #45a049; /* Color de fondo al pasar el ratón */
+    }
+
+    /* Ajuste de la sección de torneos y noticias */
+    .tournament-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    /* Ajustes en la tabla de posiciones */
+    .tournament-details table, .configure-tournament table {
+        font-size: 14px;
+    }
+
+    /* Botón de favorito en la página de detalles del torneo */
+    .tournament-details .favorite-btn {
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Ajuste de la selección del formato del torneo */
+    .tournament-format label {
+        width: 100%; /* Alinear tarjetas de formato a pantalla completa */
+        margin-bottom: 10px;
+    }
+}
+
+/* Media query para pantallas medianas (tablets) */
+@media (max-width: 992px) {
+    .tournament-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas de tablet */
+    }
+
+    .create-tournament, .configure-tournament, .account, .news-results {
+        padding: 15px;
+    }
+
+    /* Ajuste de fuentes y tamaños en la tabla de posiciones */
+    th, td {
+        font-size: 14px;
+    }
 }
