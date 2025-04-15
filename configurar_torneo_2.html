@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurar Partidos - BARR10</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="torneos.html">Torneos</a></li>
                 <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="cuenta.html">Mi Cuenta</a></li>
+                <li><a href="cuenta.html">Cuenta</a></li>
             </ul>
         </nav>
     </header>
@@ -44,7 +44,12 @@
             <div id="calendarDisplay">
                 <!-- Aquí se mostrarán los partidos generados -->
             </div>
+            <div class="config-torneo-footer">
+                <button class="continuar-btn" onclick="location.href='agregar_jugadores.html'">Continuar</button>
+            </div>
+            
         </section>
+        
     </main>
 
     <footer>
@@ -57,6 +62,6 @@
         </div>
     </footer>
 
-    <script src="configurar_torneo_2.js"></script>
+    <script src="js/configurarTorneo2.js"></script>
 </body>
 </html>

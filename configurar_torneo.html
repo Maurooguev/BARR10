@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurar Torneo - BARR10</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="torneos.html">Torneos</a></li>
                 <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="cuenta.html">Mi Cuenta</a></li>
+                <li><a href="cuenta.html">Cuenta</a></li>
             </ul>
         </nav>
     </header>
@@ -83,6 +83,36 @@
         </section>
     </main>
 
+    <script>
+        document.getElementById("finishTournamentButton").addEventListener("click", () => {
+            const tournamentName = document.getElementById("tournamentName").value.trim();
+            const tournamentLocation = document.getElementById("tournamentLocation").value.trim();
+            const tournamentTeams = parseInt(document.getElementById("tournamentTeams").value, 10);
+    
+            if (tournamentName && tournamentLocation && tournamentTeams > 0) {
+                // Crear un nuevo torneo
+                const newTournament = {
+                    id: Date.now(), // Usamos timestamp como ID único
+                    name: tournamentName,
+                    location: tournamentLocation,
+                    teams: tournamentTeams,
+                };
+    
+                // Guardar en localStorage
+                const createdTournaments = JSON.parse(localStorage.getItem("createdTournaments")) || [];
+                createdTournaments.push(newTournament);
+                localStorage.setItem("createdTournaments", JSON.stringify(createdTournaments));
+    
+                // Redirigir a torneos.html
+                alert("Torneo configurado y guardado correctamente.");
+                window.location.href = "torneos.html";
+            } else {
+                alert("Por favor, completa todos los campos correctamente.");
+            }
+        });
+    </script>
+    
+
     <footer>
         <div class="contact-info">
             <p>Contacto: contacto@barr10.com</p>
@@ -98,6 +128,6 @@
         </div>
     </footer>
 
-    <script src="configurar_torneo.js"></script>
+    <script src="js/configurarTorneo.js"></script>
 </body>
 </html>
