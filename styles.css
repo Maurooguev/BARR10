@@ -47,7 +47,7 @@ header .search-bar {
     display: flex;
     flex: 1;
     justify-content: center;
-    margin: 0 150px;
+    margin: 0 50px;
 }
 
 header .search-bar input {
